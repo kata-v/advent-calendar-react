@@ -14,29 +14,21 @@ body {
 function App() {
 const [hatches, setHatches] = useState([]);
 
-useEffect(() => {
-  hatches.length && localStorage.setItem('calendar', JSON.stringify(hatches));
-}, [hatches]);
+
 
 useEffect(() => {
   const calendar = localStorage.calendar
+   
     ? JSON.parse(localStorage.calendar)
     : createCalendar();
 
   setHatches(calendar);
 }, []);
 
-// useEffect(()=> {
-//   hatches.length && localStorage.setItem("calendar", JSON.stringify(hatches));
-// }, [hatches]);
+useEffect(() => {
+  hatches.length && localStorage.setItem('calendar', JSON.stringify(hatches));
+}, [hatches]);
 
-// useEffect(()=> {
-//   const calendar = localStorage.calendar
-//   ? JSON.parse(localStorage.calendar)
-//   : createCalendar();
-
-//   setHatches(calendar);
-// }, []);
 
 
 
